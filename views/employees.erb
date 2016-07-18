@@ -1,0 +1,10 @@
+<h1>Employees</h1>
+
+<div>
+  <% @employees.each() do |employee| %>
+    <h4><%= employee.name() %></h4>
+  <% end %>
+</div>
+
+<a href="/employees/new">Add an Employee</a>
+<a href="/">Return Home</a>

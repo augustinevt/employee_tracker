@@ -1,0 +1,15 @@
+<h1>Add an Employee</h1>
+
+<form action="/employees" method="post">
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name">
+
+  <h5>Division:</h5>
+  <% @divisions.each() do |division| %>
+    <p>
+      <label for="division_id"><%= division.title() %></label>
+      <input type="checkbox" name="division_id" id="<%= division.id() %>" value="<%= division.id() %>">
+    </p>
+  <% end %>
+  <button type="submit">Create</button>
+</form>

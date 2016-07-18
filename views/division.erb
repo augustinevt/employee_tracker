@@ -1,0 +1,22 @@
+<h1><%= @division.title() %></h1>
+
+<% if @division.employees().any?() %>
+<ul>
+  <% @division.employees().each() do |employee| %>
+    <li><%= employee.name() %></li>
+  <% end %>
+</ul>
+<% else %>
+  <h4>There are no employees in this division.</h4>
+<% end %>
+
+<a href="/division/<%= @division.id() %>/edit">Edit</a>
+<br>
+<form action="/division/<%= @division.id() %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit">Delete</button>
+</form>
+<br>
+<a href="/divisions">Return to all Divisions</a>
+<br>
+<a href="/">Return Home</a>
